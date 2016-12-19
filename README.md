@@ -23,6 +23,11 @@
 - 主题回复组件
 - 样式修改、提取等
 
+
+## bug
+
+- 进入帖子详情页（即 Detail component）后，无法点击右侧的「今日热议主题」部分的帖子
+
 ## preview
 
 ![](images/preview.png)

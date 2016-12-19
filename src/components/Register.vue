@@ -19,6 +19,4 @@ export default {
     background: rgb(250, 250, 250);
     padding: 10px;
   }
-
-
 </style>

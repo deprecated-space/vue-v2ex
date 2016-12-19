@@ -19,6 +19,7 @@ export default {
     }
   },
 
+  // 钩子
   mounted: function() {
     this.getData();
   },

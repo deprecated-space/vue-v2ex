@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from './components/App.vue'
 import VueResource from 'vue-resource';
+import App from './components/App.vue';
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -18,8 +18,8 @@ Vue.use(VueRouter);
 // 定义组件, 也可以像教程之前教的方法从别的文件引入
 import Index from './components/Index.vue';
 import Register from './components/Register.vue';
-import Detail from './components/Detail.vue';
 import Login from './components/Login.vue';
+import Detail from './components/Detail.vue';
 import Member from './components/Member.vue';
 
 const router = new VueRouter({
@@ -54,6 +54,7 @@ const router = new VueRouter({
   ]
 })
 
+// Vue 2.0 以上抛弃了 router.map 方法
 const app = new Vue({
   router: router,
   render: h => h(App)
