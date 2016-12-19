@@ -35,7 +35,15 @@ export default {
       this.$http.get(this.api + this.detailedId).then(function(res) {
         this.data = res.data[0];
         this.rawHtml = this.data.content_rendered;
-      })
+      });
+    }
+  },
+
+  watch: {
+    '$route': function() {
+      // console.log(this.$route.params.id);
+      this.detailedId = this.$route.params.id;
+      this.getData();
     }
   },
 

@@ -39,6 +39,13 @@
           // console.log(this.data)
         })
       }
+    },
+
+    watch: {
+      '$route': function() {
+        this.detailedId = this.$route.params.id;
+        this.getData();
+      }
     }
   }
 </script>
