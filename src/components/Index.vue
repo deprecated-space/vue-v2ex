@@ -6,12 +6,12 @@
       </ul>
     </div>
 
-    <div v-if="data!==null">
+    <template v-if="data!==null">
       <div class="cell" v-for="item in data">
         <span><router-link :to="{ name: 'member', params: {id: item.member.id}}"><img :src="item.member.avatar_normal" /></router-link></span>
         <router-link :to="{ name: 'detail', params: {id: item.id}}">{{ item.title }}</router-link>
       </div>
-    </div>
+    </template>
     <div v-else class="noData">
       没有数据
     </div>
