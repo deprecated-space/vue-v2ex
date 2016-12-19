@@ -1,9 +1,5 @@
 # vue-v2ex
 
-## preview
-
-![](images/preview.png)
-
 ## usage
 
 1. install [Allow-Control-Allow-Origin: *](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)
@@ -26,3 +22,7 @@
 - 主题详情页
 - 主题回复组件
 - 样式修改、提取等
+
+## preview
+
+![](images/preview.png)
