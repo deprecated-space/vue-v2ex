@@ -15,7 +15,7 @@
   - 思考路由是如何找到渲染的 \<router-view\> 位置的？如果组件没有 \<router-view\> 元素，挑最近的渲染？
   - 思考配置 \<router-link\> 和直接渲染一个 a 标签的区别
 - 数据请求
-  - 学习 vue-resource
+  - 学习 vue-resource 以及官方推荐的 [axios](https://github.com/mzabriskie/axios)
   - 当数据还没请求到时不渲染，而不是渲染空对象（赋值为 null 就报错）
   - loading 动画
 - Rigister & Login components
