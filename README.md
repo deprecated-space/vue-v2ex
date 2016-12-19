@@ -1,8 +1,12 @@
 # vue-v2ex
 
+## preview
+
+![](images/preview.png)
+
 ## usage
 
-1. chrome 上安装跨域神器 [Allow-Control-Allow-Origin: *](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)
+1. install [Allow-Control-Allow-Origin: *](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)
 2. `npm install`
 3. `npm run dev`
 
