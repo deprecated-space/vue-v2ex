@@ -3,7 +3,7 @@
     <span><img :src="data.avatar_normal" /></span>
     <div class="user">
       <h2>{{ data.username }}</h2>
-      <p>V2EX 第 {{ data.id }} 号会员, 加入于 xxx 天前</p>
+      <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | dateFormat}}</p>
     </div>
   </div>
 </template>
@@ -46,6 +46,26 @@ export default {
           this.data = res.data;
         });
       }
+    }
+  },
+
+  // 数据格式化
+  filters: {
+    dateFormat: function(timestamp) {
+      let date = new Date(timestamp * 1000)
+        , year = date.getFullYear()
+        , month = date.getMonth() + 1
+        , day = date.getDate();
+
+      return year + '-' + month + '-' + day;
+    }
+  },
+
+  watch: {
+    // 组件内的路由变化，即 params 参数的变化
+    '$route': function() {
+      this.getUserId();
+      this.getData();
     }
   }
 }

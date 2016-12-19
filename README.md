@@ -17,12 +17,17 @@
 - 数据请求
   - 学习 vue-resource 以及官方推荐的 [axios](https://github.com/mzabriskie/axios)
   - 当数据还没请求到时不渲染，而不是渲染空对象（赋值为 null 就报错）
+  - 请求失败的容错处理
   - loading 动画
 - Rigister & Login components
 - 主题详情页
 - 主题回复组件
 - 样式修改、提取等
+- 宽度自适应，以及在移动端的适配
 
+## thinking
+
+- 对于每个组件数据的渲染，是否用计算属性（computed）更为合适？
 
 ## bug
 
