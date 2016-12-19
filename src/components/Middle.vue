@@ -24,6 +24,6 @@ export default {
 <style scoped>
   .box {
     overflow: hidden;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 </style>

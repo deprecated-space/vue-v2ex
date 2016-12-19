@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <p>&copy;&nbsp;2016 - 2016</p>
+    <p><router-link :to="{name: 'index'}">&copy;&nbsp;2016 - 2016</router-link></p>
   </div>
 </template>
 
@@ -20,5 +20,10 @@ export default {
     text-align: center;
     background-color: #f7f7f7;
     color: gray;
+  }
+
+  .box p a {
+    color: #555;
+    text-decoration: none;
   }
 </style>

@@ -1,11 +1,16 @@
 <template>
   <div class="box">
-    <h1>{{ data.title }}</h1>
-    <p v-html="rawHtml"></p>
+    <div class="topic">
+      <h1>{{ data.title }}</h1>
+      <p v-html="rawHtml"></p>
+    </div>
+    <reply></reply>
   </div>
 </template>
 
 <script>
+import Reply from './Reply.vue';
+
 export default {
   data () {
     return {
@@ -32,6 +37,10 @@ export default {
         this.rawHtml = this.data.content_rendered;
       })
     }
+  },
+
+  components: {
+    Reply
   }
 }
 </script>
@@ -40,10 +49,6 @@ export default {
   .box {
     width: 700px;
     float: left;
-    background: rgb(250, 250, 250);
-    padding-left: 20px;
-    padding-top: 10px;
-    padding-bottom: 20px;
   }
 
   h1 {
@@ -52,5 +57,13 @@ export default {
     line-height: 150%;
     margin: 0px 0px 10px 0px;
     padding: 0px;
+  }
+
+  .topic {
+    background: rgb(250, 250, 250);
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
   }
 </style>

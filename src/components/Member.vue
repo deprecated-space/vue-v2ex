@@ -9,11 +9,13 @@
 </template>
 
 <script>
+// 兼容 id & username
 export default {
   data () {
     return {
-      api: 'https://www.v2ex.com/api/members/show.json?id=',
+      api: 'https://www.v2ex.com/api/members/show.json',
       userId: null,
+      key: '', // 是根据 'id' 还是 'username'
       data: {}
     }
   },
@@ -26,15 +28,24 @@ export default {
   methods: {
     getUserId: function() {
       // return this.$route.name;
-      this.userId = this.$route.params.id;
-      // return 'hello'
+      this.userId = this.$route.params.id; // 是 'id' 或者 'username'
+      this.key = /^\d+$/.test(this.userId) ? 'id': 'username';
     },
 
     getData: function() {
-      this.$http.get(this.api + this.userId).then(function(res) {
-        // console.log(res.data)
-        this.data = res.data;
-      });
+      // let key = this.key;
+      // 如果是根据 id
+      if (this.key === 'id') {
+        this.$http.get(this.api, {params: {id: this.userId}}).then(function(res) {
+          // console.log(res.data)
+          this.data = res.data;
+        });
+      } else { // 根据 username
+        this.$http.get(this.api, {params: {username: this.userId}}).then(function(res) {
+          // console.log(res.data)
+          this.data = res.data;
+        });
+      }
     }
   }
 }

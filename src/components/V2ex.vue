@@ -6,9 +6,9 @@
       <span class="fade">V2EX 是一个关于分享和探索的地方</span>
     </div>
     <div class="inner">
-      <input type="button" value="现在注册" />
+      <router-link :to="{name: 'register'}"><input type="button" value="现在注册" /></router-link>
       <div class="sep5"></div>
-      <div>已注册用户请登录</div>
+      <div>已注册用户请<router-link :to="{name: 'login'}">登录</router-link></div>
     </div>
   </div>
 </template>
