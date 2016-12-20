@@ -3,7 +3,7 @@
     <span><img :src="data.avatar_normal" /></span>
     <div class="user">
       <h2>{{ data.username }}</h2>
-      <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | dateFormat}}</p>
+      <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate}}</p>
     </div>
   </div>
 </template>

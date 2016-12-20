@@ -14,6 +14,11 @@ Vue.use(VueRouter);
 //   render: h => h(App)
 // })
 
+// filters
+// 注册全局的管道过滤器
+import {formatDate} from './filters';
+Vue.filter('formatDate', formatDate);
+
 
 // 定义组件, 也可以像教程之前教的方法从别的文件引入
 import Index from './components/Index.vue';
@@ -67,4 +72,3 @@ const app = new Vue({
   router: router,
   render: h => h(App)
 })
-
