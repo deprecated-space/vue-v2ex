@@ -27,6 +27,6 @@ export default {
   .box {
     width: 250px;
     float: right;
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;*/
   }
 </style>

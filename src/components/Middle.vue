@@ -1,8 +1,10 @@
 <template>
   <div class="box">
     <!-- 根据路由渲染的部分 -->
-    <router-view></router-view>
-    <right></right>
+    <div class="left">
+      <router-view></router-view>
+    </div>
+    <right class="right"></right>
   </div>
 </template>
 
@@ -27,5 +29,25 @@ export default {
   .box {
     overflow: hidden;
     margin-bottom: 10px;
+  }
+
+  .box .left {
+    /*max-width: 700px;*/
+    width: 700px;
+    background: rgb(250, 250, 250);
+    float: left;
+    /*margin-right: -300px;*/
+  }
+
+  .box .right {
+    width: 250px;
+    float: right;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 700px) {
+    .right {
+      display: none;
+    }
   }
 </style>

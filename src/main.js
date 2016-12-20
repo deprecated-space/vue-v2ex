@@ -22,6 +22,8 @@ import Login from './components/Login.vue';
 import Detail from './components/Detail.vue';
 import Member from './components/Member.vue';
 
+// import router from './router/index.js';
+
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
@@ -55,7 +57,14 @@ const router = new VueRouter({
 })
 
 // Vue 2.0 以上抛弃了 router.map 方法
+// const app = new Vue({
+//   router: router,
+//   render: h => h(App)
+// }).$mount('#app')
+
 const app = new Vue({
+  el: '#app',
   router: router,
   render: h => h(App)
-}).$mount('#app')
+})
+

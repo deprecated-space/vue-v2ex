@@ -55,8 +55,8 @@ export default {
 
 <style scoped>
   .box {
-    width: 700px;
-    float: left;
+  /*  width: 700px;
+    float: left;*/
   }
 
   h1 {

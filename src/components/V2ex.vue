@@ -25,9 +25,9 @@ export default {
 <style scoped>
   .box {
     /*height: 200px;*/
-    width: 250px;
+    /*width: 250px;*/
     background: rgb(250, 250, 250);
-    /*margin-bottom: 40px;*/
+    margin-bottom: 40px;
   }
 
   .box .cell {

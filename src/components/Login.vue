@@ -13,10 +13,10 @@ export default {
 
 <style scoped>
   .box {
-    float:left;
+    /*float:left;*/
     height: 700px;
-    width: 700px;
-    background: rgb(250, 250, 250);
+   /* width: 700px;
+    background: rgb(250, 250, 250);*/
     padding: 10px;
   }
 </style>

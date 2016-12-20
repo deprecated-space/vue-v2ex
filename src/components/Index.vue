@@ -73,9 +73,9 @@ export default {
 
 <style scoped>
   .box {
-    width: 700px;
+    /*width: 700px;
     background: rgb(250, 250, 250);
-    float: left;
+    float: left;*/
   }
 
   .box .cell {
