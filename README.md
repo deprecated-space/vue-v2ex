@@ -33,6 +33,13 @@
 
 - ~~进入帖子详情页（即 Detail component）后，无法点击右侧的「今日热议主题」部分的帖子~~（fixed，用 watch 方法监听路由 $route 的变化，然后更新，需要同时更新 Detail 的子组件 Reply，思考是否可以一次更新完？）
 
+
+## V2ex API
+
+- [V2EX API 接口](https://www.v2ex.com/p/7v9TEc53)
+- [V2EX API Documents](https://gist.github.com/fanzeyi/6951803)
+
+
 ## preview
 
 ![](images/preview.png)
