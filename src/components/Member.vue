@@ -3,14 +3,16 @@
     <span><img :src="data.avatar_normal" /></span>
     <div class="user">
       <h2>{{ data.username }}</h2>
-      <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate}}</p>
+      <!-- v-clock 的正确用法？ -->
+      <p v-cloak>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate23}}</p>
     </div>
   </div>
 </template>
 
 <script>
 // 兼容 id & username
-export default {
+// export default
+module.exports =  {
   data () {
     return {
       api: 'https://www.v2ex.com/api/members/show.json',
@@ -20,7 +22,7 @@ export default {
     }
   },
 
-  mounted: function() {
+  created: function() {
     this.getUserId();
     this.getData();
   },
@@ -91,5 +93,9 @@ export default {
 
   .box .user h2 {
     margin-bottom: 5px;
+  }
+
+  [v-cloak] {
+    display: none;
   }
 </style>

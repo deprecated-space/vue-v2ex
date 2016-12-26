@@ -5,34 +5,38 @@ import Login from './../components/Login.vue';
 import Detail from './../components/Detail.vue';
 import Member from './../components/Member.vue';
 
-export default {
-  mode: 'history',
-  base: __dirname,
-  routes: [
-    {
-      path: '/index',
-      name: 'index',
-      component: Index
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: Register
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/detail/:id',
-      name: 'detail',
-      component: Detail
-    },
-    {
-      path: '/member/:id',
-      name: 'member',
-      component: Member
-    }
-  ]
-}
+
+const myRouter = [
+  {
+    path: '/index',
+    name: 'index',
+    component: Index
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/login',
+    name: 'login',
+    // redirect: '/register',
+    component: Login
+  },
+  {
+    path: '/detail/:id',
+    name: 'detail',
+    component: Detail
+  },
+  {
+    path: '/member/:id',
+    name: 'member',
+    component: Member
+  },
+  {
+    path: '*',
+    redirect: '/index'
+  }
+];
+
+export default myRouter;

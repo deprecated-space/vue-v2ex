@@ -3,9 +3,9 @@
     <div class="left"><router-link :to="{name: 'index'}">V2EX Clone</router-link></div>
     <div class="right">
       <ul>
-        <li><router-link :to="{name: 'index'}">首页</router-link></li>
-        <li><router-link :to="{name: 'register'}">注册</router-link></li>
-        <li><router-link :to="{name: 'login'}">登录</router-link></li>
+        <li v-for="item in tabs">
+          <router-link :class="{curTab: item.key === curTab}" :to="{name: item.key}">{{ item.value }}</router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -15,7 +15,31 @@
 export default {
   data () {
     return {
+      curTab: 'index',
+      tabs: [
+        {key: 'index', value: '首页'},
+        {key: 'register', value: '注册'},
+        {key: 'login', value: '登录'}
+      ]
     }
+  },
+
+  watch: {
+    // 监听路由变化，改变 curTab 值
+    '$route': function() {
+      let tab = this.$route.name;
+      // console.log(tab)
+
+      // 防止切换到 Member 等组件时，失去顶部路由标志
+      if (['index', 'register', 'login'].indexOf(tab) !== -1)
+        this.curTab = tab;
+    }
+  },
+
+  created: function() {
+    let tab = this.$route.name;
+    // console.log(tab)
+    this.curTab = tab;
   }
 }
 </script>
@@ -61,5 +85,13 @@ export default {
   .left a:link {
     text-decoration: none;
     color: #fff;
+  }
+
+  .curTab {
+    color: white !important;
+    background-color: #555;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 5px;
   }
 </style>

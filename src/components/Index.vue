@@ -46,9 +46,10 @@ export default {
   },
 
   // 监听路由的变化，主要是 tab 页的切换
+  // 感觉也可以监听 A 标签的点击，不过感觉 watch 路由比较优雅，不再是 DOM 监听
   watch: {
     '$route': function() {
-      console.log(this.$route.query.tab);
+      // console.log(this.$route.query.tab);
       let tab = this.$route.query.tab;
       this.curTab = tab;
       // 假设只有 `技术` 和 `R2` 两个 tab 有数据
