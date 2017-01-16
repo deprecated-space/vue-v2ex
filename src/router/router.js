@@ -8,7 +8,7 @@ import Missing from './../components/missing.vue';
 
 const myRouter = [
   {
-    path: '/index',
+    path: '/',
     // alias: '/',
     name: 'index',
     component: Index

@@ -12,6 +12,8 @@
 
 <script type="text/javascript">
   export default {
+    // ES6 语法糖
+    // 其实就是 data: function() {return function() {...}}
     data() {
       return {
         api: 'https://www.v2ex.com/api/replies/show.json?topic_id=',

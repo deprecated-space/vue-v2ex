@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div v-if="!isLoading" class="box">
     <div class="topic">
       <h1>{{ data.title }}</h1>
       <p v-html="rawHtml"></p>
@@ -17,7 +17,8 @@ export default {
       api: 'https://www.v2ex.com/api/topics/show.json?id=',
       detailedId: null,
       rawHtml: '',
-      data: {}
+      data: null,
+      isLoading: true
     }
   },
 
@@ -35,6 +36,7 @@ export default {
       this.$http.get(this.api + this.detailedId).then(function(res) {
         this.data = res.data[0];
         this.rawHtml = this.data.content_rendered;
+        this.isLoading = false;
       });
     }
   },

@@ -19,6 +19,11 @@ export default {
 
   components: {
     Top, Middle, Bottom
+  },
+
+  created() {
+    // if (this.$route.path === '/')
+    //   this.$router.replace('/index')
   }
 }
 </script>

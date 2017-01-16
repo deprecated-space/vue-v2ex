@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource';
 import App from './components/App.vue';
 
+
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
@@ -29,7 +30,7 @@ Vue.filter('formatDate23', f2);
 // import Detail from './components/Detail.vue';
 // import Member from './components/Member.vue';
 
-import routerConfig from './router';
+import routerConfig from './router/router.js';
 
 const router = new VueRouter({
   mode: 'history',
@@ -41,9 +42,14 @@ const router = new VueRouter({
   }
 });
 
+
+// vue 1 的用法？
 // router.redirect({
 //   '*': '/index'
 // })
+
+// console.log(router)
+// router.replace('/index');
 
 const app = new Vue({
   el: '#app',

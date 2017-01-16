@@ -1,15 +1,20 @@
 <template>
   <div class="box">
-    <span><img :src="data.avatar_normal" /></span>
-    <div class="user">
-      <h2>{{ data.username }}</h2>
-      <!-- v-clock 的正确用法？ -->
-      <p v-cloak>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate23}}</p>
-    </div>
+    <template v-if="!isLoading">
+      <span><img :src="data.avatar_normal" /></span>
+      <div class="user">
+        <h2>{{ data.username }}</h2>
+        <!-- v-clock 的正确用法？ -->
+        <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate23}}</p>
+      </div>
+    </template>
+    <template v-else>loading...</template>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 // 兼容 id & username
 // export default
 module.exports =  {
@@ -18,7 +23,8 @@ module.exports =  {
       api: 'https://www.v2ex.com/api/members/show.json',
       userId: null,
       key: '', // 是根据 'id' 还是 'username'
-      data: {}
+      data: null,
+      isLoading: true
     }
   },
 
@@ -37,14 +43,16 @@ module.exports =  {
     getData: function() {
       // let key = this.key;
       // 如果是根据 id
+      let that = this;  // 注意 this
+
       if (this.key === 'id') {
-        this.$http.get(this.api, {params: {id: this.userId}}).then(function(res) {
-          // console.log(res.data)
-          this.data = res.data;
-        });
+        // test
+        setTimeout(() => axios.get(this.api, {params: {id: this.userId}}).then(function(res) {
+          that.data = res.data;
+          that.isLoading = false;
+        }), 2000);
       } else { // 根据 username
         this.$http.get(this.api, {params: {username: this.userId}}).then(function(res) {
-          // console.log(res.data)
           this.data = res.data;
         });
       }
