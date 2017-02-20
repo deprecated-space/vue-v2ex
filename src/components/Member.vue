@@ -16,8 +16,8 @@
 import axios from 'axios';
 
 // 兼容 id & username
-// export default
-module.exports =  {
+export default {
+// module.exports =  {
   data () {
     return {
       api: 'https://www.v2ex.com/api/members/show.json',
