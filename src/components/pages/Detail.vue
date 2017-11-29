@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Reply from './Reply.vue';
+import Reply from '../common/Reply.vue';
 
 export default {
   data () {

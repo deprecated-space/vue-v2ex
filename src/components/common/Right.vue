@@ -25,8 +25,9 @@ export default {
 
 <style scoped>
   .box {
-    width: 250px;
-    float: right;
+    /* width: 250px;  */
+    /* width: 25%; */
+    /* float: right; */
     /*margin-bottom: 40px;*/
   }
 </style>

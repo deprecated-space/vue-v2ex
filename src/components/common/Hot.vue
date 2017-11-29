@@ -1,11 +1,13 @@
 <template>
   <div class="box">
     <div class="cell">
-      <span class="fade">今日热议主题</span>
+      <span class="title">今日热议主题</span>
     </div>
     <div class="cell" v-for="item in data">
       <span><router-link :to="{ name: 'member', params: {id: item.member.id}}"><img v-bind:src="item.member.avatar_mini" /></router-link></span>
-      <p><router-link :to="{ name: 'detail', params: {id: item.id}}">{{ item.title }}</router-link></p>
+      <p>
+        <router-link :to="{ name: 'detail', params: {id: item.id}}">{{ item.title }}</router-link>
+      </p>
     </div>
   </div>
 </template>
@@ -14,7 +16,7 @@
 export default {
   data () {
     return {
-      api: 'https://www.v2ex.com/api/topics/hot.json',
+      api: '//www.v2ex.com/api/topics/hot.json',
       data: null
     }
   },
@@ -39,7 +41,8 @@ export default {
     /*height: 100px;*/
     /*width: 250px;*/
     background: rgb(250, 250, 250);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    border-radius: 3px;
   }
 
   .cell {
@@ -51,13 +54,14 @@ export default {
     border-bottom: 1px solid #e2e2e2;
   }
 
-  .fade {
+  .title {
     color: #ccc;
   }
 
   .cell span img {
     float: left;
     margin-right: 10px;
+    border-radius: 4px;
   }
 
   .cell p {

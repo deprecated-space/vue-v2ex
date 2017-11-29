@@ -1,15 +1,13 @@
-// 定义组件, 也可以像教程之前教的方法从别的文件引入
-import Index from './../components/Index.vue';
-import Register from './../components/Register.vue';
-import Login from './../components/Login.vue';
-import Detail from './../components/Detail.vue';
-import Member from './../components/Member.vue';
-import Missing from './../components/missing.vue';
+import Index from './../components/pages/Index.vue';
+import Register from './../components/pages/Register.vue';
+import Login from './../components/pages/Login.vue';
+import Detail from './../components/pages/Detail.vue';
+import Member from './../components/pages/Member.vue';
+import NotFound from './../components/pages/404.vue';
 
 const myRouter = [
   {
     path: '/',
-    // alias: '/',
     name: 'index',
     component: Index
   },
@@ -37,13 +35,9 @@ const myRouter = [
   {
     // 404
     path: '*',
-    name: 'missing',
-    component: Missing
+    name: 'NotFound',
+    component: NotFound
   }
-  // {
-  //   path: '/',
-  //   redirect: '/index'
-  // }
 ];
 
 export default myRouter;

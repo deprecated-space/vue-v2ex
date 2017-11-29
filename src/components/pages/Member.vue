@@ -5,7 +5,7 @@
       <div class="user">
         <h2>{{ data.username }}</h2>
         <!-- v-clock 的正确用法？ -->
-        <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate23}}</p>
+        <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate}}</p>
       </div>
     </template>
     <template v-else>loading...</template>
@@ -20,7 +20,7 @@ export default {
 // module.exports =  {
   data () {
     return {
-      api: 'https://www.v2ex.com/api/members/show.json',
+      api: '//www.v2ex.com/api/members/show.json',
       userId: null,
       key: '', // 是根据 'id' 还是 'username'
       data: null,

@@ -2,13 +2,19 @@
   <div class="box">
     <div class="cell">
       <ul>
-        <li v-for="item in tabs"><router-link :class="{curTab: item.key === curTab, notCur: item.key !== curTab}" :to="{name: 'index', query: {tab: item.key}}">{{ item.value }}</router-link></li>
+        <li v-for="item in tabs">
+          <router-link :class="{curTab: item.key === curTab, notCur: item.key !== curTab}" :to="{name: 'index', query: {tab: item.key}}">{{ item.value }}</router-link>
+        </li>
       </ul>
     </div>
 
     <template v-if="data!==null">
       <div class="cell" v-for="item in data">
-        <span><router-link :to="{ name: 'member', params: {id: item.member.id}}"><img :src="item.member.avatar_normal" /></router-link></span>
+        <span>
+          <router-link :to="{ name: 'member', params: {id: item.member.id}}">
+            <img :src="item.member.avatar_normal" />
+          </router-link>
+        </span>
         <router-link :to="{ name: 'detail', params: {id: item.id}}">{{ item.title }}</router-link>
       </div>
     </template>
@@ -22,7 +28,7 @@
 export default {
   data () {
     return {
-      api: "https://www.v2ex.com/api/topics/latest.json",
+      api: "//www.v2ex.com/api/topics/latest.json",
       data: null,
       curTab: 'tech',  // 当前 tab
       tabs: [
@@ -94,19 +100,20 @@ export default {
   .box .cell ul li {
     font-size: 14px;
     padding-right: 20px;
-    display: inline;
+    margin-bottom: 10px;
+    display: inline-block;
   }
 
   .box .cell ul li a {
-    padding: 5px;
+    padding: 3px 5px;
     color: #555;
-    text-decoration: none;
+    /* text-decoration: none; */
   }
 
   .box .cell ul li a.notCur:hover {
     background-color: #f5f5f5;
     color: #000;
-    text-decoration: none;
+    /* text-decoration: none; */
   }
 
   .curTab {
@@ -119,6 +126,7 @@ export default {
   .cell span img {
     float: left;
     margin-right: 20px;
+    border-radius: 4px;
   }
 
   .cell a {

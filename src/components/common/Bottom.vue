@@ -1,6 +1,10 @@
 <template>
-  <div class="box">
-    <p><router-link :to="{name: 'index'}">&copy;&nbsp;2016 - 2016</router-link></p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <router-link :to="{name: 'index'}">&copy; 2016 - 2017</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,7 +26,7 @@ export default {
     color: gray;
   }
 
-  .box p a {
+  .box a {
     color: #555;
     text-decoration: none;
   }

@@ -16,7 +16,7 @@
     // 其实就是 data: function() {return function() {...}}
     data() {
       return {
-        api: 'https://www.v2ex.com/api/replies/show.json?topic_id=',
+        api: '//www.v2ex.com/api/replies/show.json?topic_id=',
         detailedId: null,
         key: '', // 是根据 'id' 还是 ''
         // rawHtml: '',

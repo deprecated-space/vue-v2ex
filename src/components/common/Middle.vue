@@ -1,10 +1,12 @@
 <template>
-  <div class="box">
+  <div class="box row">
     <!-- 根据路由渲染的部分 -->
-    <div class="left">
-      <router-view></router-view>
+    <div class="left col-md-8">
+      <div class="wrapper">
+        <router-view></router-view>
+      </div>
     </div>
-    <right class="right"></right>
+    <right class="right col-md-4"></right>
   </div>
 </template>
 
@@ -31,23 +33,18 @@ export default {
     margin-bottom: 10px;
   }
 
-  .box .left {
+  .box .left .wrapper {
     /*max-width: 700px;*/
-    width: 700px;
+    /* width: 700px; */
     background: rgb(250, 250, 250);
-    float: left;
+    /* float: left; */
     /*margin-right: -300px;*/
   }
 
   .box .right {
-    width: 250px;
-    float: right;
-    margin-bottom: 40px;
-  }
-
-  @media (max-width: 700px) {
-    .right {
-      display: none;
-    }
+    /* width: 250px; */
+    /* width: 25%; */
+    /* float: right; */
+    /* margin-bottom: 40px; */
   }
 </style>

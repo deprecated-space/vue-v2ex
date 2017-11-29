@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="cell">
-      <span class="fade">社区运行状况</span>
+      <span class="title">社区运行状况</span>
     </div>
     <div class="cell">
       <p>注册会员：{{ data.member_max }} </p>
@@ -14,7 +14,7 @@
 export default {
   data () {
     return {
-      api: 'https://www.v2ex.com/api/site/stats.json',
+      api: '//www.v2ex.com/api/site/stats.json',
       data: {}
     }
   },
@@ -28,7 +28,6 @@ export default {
     getData: function() {
       this.$http.get(this.api).then(function(res){
         this.data = res.data;
-        // console.log(this.data.member_max)
       })
     }
   }
@@ -51,7 +50,7 @@ export default {
     border-bottom: 1px solid #e2e2e2;
   }
 
-  .fade {
+  .title {
     color: #ccc;
   }
 

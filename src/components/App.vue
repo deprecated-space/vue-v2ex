@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <top></top>
     <middle></middle>
     <bottom></bottom>
@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Top from "./Top.vue";
-import Middle from "./Middle.vue";
-import Bottom from "./Bottom.vue";
+import Top from "./common/Top.vue";
+import Middle from "./common/Middle.vue";
+import Bottom from "./common/Bottom.vue";
 
 export default {
   data () {
@@ -29,17 +29,7 @@ export default {
 </script>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
   body {
     background-color: rgb(221, 221, 221);
-  }
-
-  #app {
-    max-width: 1000px;
-    margin: 0 auto;
   }
 </style>

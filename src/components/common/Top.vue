@@ -1,12 +1,16 @@
 <template>
-  <div class="box">
-    <div class="left"><router-link :to="{name: 'index'}">V2EX Clone</router-link></div>
-    <div class="right">
-      <ul>
-        <li v-for="item in tabs">
-          <router-link :class="{curTab: item.key === curTab}" :to="{name: item.key}">{{ item.value }}</router-link>
-        </li>
-      </ul>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="left"><router-link :to="{name: 'index'}">V2EX Clone</router-link></div>
+        <div class="right">
+          <ul>
+            <li v-for="item in tabs">
+              <router-link :class="{curTab: item.key === curTab}" :to="{name: item.key}">{{ item.value }}</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,24 +51,21 @@ export default {
 <style scoped>
   .box {
     height: 40px;
-    background-color: #f7f7f7;
-    margin-bottom: 20px;
-  }
-
-  .left {
-    height: 40px;
-    margin-left: 20px;
     line-height: 40px;
-    width: 200px;
-    float: left;
-    font-weight: bold;
-    font-size: 20px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
   }
 
-  .right {
-    height: 40px;
-    margin-right: 20px;
+  .box .left {
+    float: left;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .box .right {
     float: right;
+    margin-right: 20px;
   }
 
   .box ul {
@@ -73,25 +74,18 @@ export default {
 
   .box ul > li {
     display: inline;
-    line-height: 40px;
-    padding: 10px;
+    margin: 0 5px;
   }
 
-  .box ul li a {
+  .box ul > li > a {
+    padding: 3px 5px;
     text-decoration: none;
     color: #444;
   }
 
-  .left a:link {
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .curTab {
-    color: white !important;
+  .box ul > li > a.curTab {
+    color: white;
     background-color: #555;
-    border: 1px solid #555;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 8px;
   }
 </style>
