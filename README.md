@@ -39,6 +39,9 @@
 
 - [V2EX API 接口](https://www.v2ex.com/p/7v9TEc53)
 - [V2EX API Documents](https://gist.github.com/fanzeyi/6951803)
+- <https://github.com/djyde/V2EX-API>
+- <http://docs.v2ex1.apiary.io/>
+- <https://indexxuan.github.io/v2ex-api-bridge/api/index.html>
 
 
 ## preview
