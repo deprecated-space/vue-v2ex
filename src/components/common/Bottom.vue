@@ -19,15 +19,11 @@ export default {
 
 <style scoped>
   .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
-    line-height: 40px;
-    text-align: center;
     background-color: #f7f7f7;
     color: gray;
-  }
-
-  .box a {
-    color: #555;
-    text-decoration: none;
   }
 </style>

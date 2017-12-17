@@ -1,25 +1,27 @@
 <template>
   <div class="box">
-    <div class="cell">
-      <ul>
-        <li v-for="item in tabs">
-          <router-link :class="{curTab: item.key === curTab, notCur: item.key !== curTab}" :to="{name: 'index', query: {tab: item.key}}">{{ item.value }}</router-link>
-        </li>
-      </ul>
+    <div class="nav">
+      <span v-for="item in tabs" class="nav-item">
+        <router-link 
+          :class="{active: item.key === curTab, notCur: item.key !== curTab}" 
+          :to="{name: 'index', query: {tab: item.key}}">
+            {{ item.value }}
+        </router-link>
+      </span>
     </div>
 
-    <template v-if="data!==null">
-      <div class="cell" v-for="item in data">
-        <span>
-          <router-link :to="{ name: 'member', params: {id: item.member.id}}">
+    <div class="list">
+      <template v-if="data!==null">
+        <div class="cell" v-for="item in data">
+          <router-link :to="{ name: 'member', params: {id: item.member.id}}" class="post-avatars-wrapper">
             <img :src="item.member.avatar_normal" />
           </router-link>
-        </span>
-        <router-link :to="{ name: 'detail', params: {id: item.id}}">{{ item.title }}</router-link>
+          <router-link :to="{ name: 'detail', params: {id: item.id}}" class="post-title">{{ item.title }}</router-link>
+        </div>
+      </template>
+      <div v-else class="empty-data">
+        Sorry, 暂时没有数据
       </div>
-    </template>
-    <div v-else class="noData">
-      没有数据
     </div>
   </div>
 </template>
@@ -30,6 +32,7 @@ export default {
     return {
       api: "//www.v2ex.com/api/topics/latest.json",
       data: null,
+      isLoading: true,
       curTab: 'tech',  // 当前 tab
       tabs: [
         {key: 'tech', value: '技术'},
@@ -78,65 +81,55 @@ export default {
 }
 </script>
 
-<style scoped>
-  .box {
-    /*width: 700px;
-    background: rgb(250, 250, 250);
-    float: left;*/
-  }
-
-  .box .cell {
-    overflow: hidden;
-    padding: 10px;
-    line-height: 120%;
-    text-align: left;
+<style scoped lang="scss">
+  // 头部导航
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     border-bottom: 1px solid #e2e2e2;
+    padding: 5px 15px 10px;
+    .nav-item {
+      min-width: 40px;
+      margin: 5px;
+      a {
+        padding: 3px 8px;
+        color: #666;
+        text-decoration: none;
+        &:hover {
+          color: #333;
+        }
+        &.active {
+          color: white !important;
+          background-color: #555;
+          border: 1px solid #555;
+          border-radius: 4px;
+        }
+      }
+    }
   }
 
-  .box .cell ul {
-    list-style-type: none;
+  // list 详情
+  .list .cell {
+    padding: 10px;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+
+    .post-avatars-wrapper {
+      margin-right: 15px;
+      img {
+        border-radius: 4px;
+      }
+    }
+
+    .post-title {
+      text-decoration: none;
+      overflow: hidden;
+    }
   }
 
-  .box .cell ul li {
-    font-size: 14px;
-    padding-right: 20px;
-    margin-bottom: 10px;
-    display: inline-block;
-  }
-
-  .box .cell ul li a {
-    padding: 3px 5px;
-    color: #555;
-    /* text-decoration: none; */
-  }
-
-  .box .cell ul li a.notCur:hover {
-    background-color: #f5f5f5;
-    color: #000;
-    /* text-decoration: none; */
-  }
-
-  .curTab {
-    color: white !important;
-    background-color: #555;
-    border: 1px solid #555;
-    border-radius: 10px;
-  }
-
-  .cell span img {
-    float: left;
-    margin-right: 20px;
-    border-radius: 4px;
-  }
-
-  .cell a {
-    color: #555;
-    text-decoration: none;
-    overflow: hidden;
-  }
-
-  .noData {
-    margin: 20px;
-    font-size: 20px;
+  .empty-data {
+    padding: 10px;
+    font-size: 22px;
   }
 </style>

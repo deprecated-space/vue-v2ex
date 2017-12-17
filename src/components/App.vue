@@ -1,8 +1,14 @@
 <template>
-  <div id="app" class="container">
-    <top></top>
-    <middle></middle>
-    <bottom></bottom>
+  <div id="app" class="">
+    <div class="global-nav">
+      <div class="container">
+        <top></top>
+      </div>
+    </div>
+    <div class="container">
+      <middle></middle>
+      <bottom></bottom>
+    </div>
   </div>
 </template>
 
@@ -31,5 +37,19 @@ export default {
 <style>
   body {
     background-color: rgb(221, 221, 221);
+  }
+
+  a {
+    color: #666;
+  }
+
+  a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .global-nav {
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
   }
 </style>

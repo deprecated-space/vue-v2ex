@@ -1,8 +1,11 @@
 <template>
   <div class="box row">
     <!-- 根据路由渲染的部分 -->
+    <!-- qa: 难道一个页面只能有一个 router-view?? -->
     <div class="left col-md-8">
       <div class="wrapper">
+        <!-- 路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
         <router-view></router-view>
       </div>
     </div>
@@ -37,6 +40,7 @@ export default {
     /*max-width: 700px;*/
     /* width: 700px; */
     background: rgb(250, 250, 250);
+    padding: 15px;
     /* float: left; */
     /*margin-right: -300px;*/
   }

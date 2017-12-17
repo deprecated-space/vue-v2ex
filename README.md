@@ -33,7 +33,7 @@
 
 - ~~进入帖子详情页（即 Detail component）后，无法点击右侧的「今日热议主题」部分的帖子~~（fixed，用 watch 方法监听路由 $route 的变化，然后更新，需要同时更新 Detail 的子组件 Reply，思考是否可以一次更新完？）
 - 如果直接在地址栏输入帖子地址或者会员地址，比如 <http://localhost:8080/member/1>，右上角没有路由
-
+- 在页面 <http://localhost:8080/?tab=apple>，一刷新就跳到第一个 tag 了
 
 ## V2ex API
 

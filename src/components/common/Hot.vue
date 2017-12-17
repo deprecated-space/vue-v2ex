@@ -4,7 +4,11 @@
       <span class="title">今日热议主题</span>
     </div>
     <div class="cell" v-for="item in data">
-      <span><router-link :to="{ name: 'member', params: {id: item.member.id}}"><img v-bind:src="item.member.avatar_mini" /></router-link></span>
+      <span>
+        <router-link :to="{ name: 'member', params: {id: item.member.id}}">
+          <img :src="item.member.avatar_mini">
+        </router-link>
+      </span>
       <p>
         <router-link :to="{ name: 'detail', params: {id: item.id}}">{{ item.title }}</router-link>
       </p>
@@ -29,17 +33,14 @@ export default {
     getData: function() {
       this.$http.get(this.api).then(function(res) {
         this.data = res.data;
-        // console.log(this.data)
       })
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .box {
-    /*height: 100px;*/
-    /*width: 250px;*/
     background: rgb(250, 250, 250);
     margin-bottom: 20px;
     border-radius: 3px;

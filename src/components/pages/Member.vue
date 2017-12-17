@@ -1,19 +1,34 @@
 <template>
   <div class="box">
     <template v-if="!isLoading">
-      <span><img :src="data.avatar_normal" /></span>
+      <img :src="data.avatar_normal" class="avatars-img">
       <div class="user">
-        <h2>{{ data.username }}</h2>
+        <h2 class="username">{{ data.username }}</h2>
         <!-- v-clock 的正确用法？ -->
-        <p>V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate}}</p>
+        <p class="desc">V2EX 第 {{ data.id }} 号会员, 加入于 {{ data.created | formatDate}}</p>
       </div>
     </template>
-    <template v-else>loading...</template>
+    <template v-else>
+      <div class="loading-area">
+         <div class="sk-cube-grid">
+           <div class="sk-cube sk-cube1"></div>
+           <div class="sk-cube sk-cube2"></div>
+           <div class="sk-cube sk-cube3"></div>
+           <div class="sk-cube sk-cube4"></div>
+           <div class="sk-cube sk-cube5"></div>
+           <div class="sk-cube sk-cube6"></div>
+           <div class="sk-cube sk-cube7"></div>
+           <div class="sk-cube sk-cube8"></div>
+           <div class="sk-cube sk-cube9"></div>
+         </div>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import 'spinkit/css/spinkit.css'
 
 // 兼容 id & username
 export default {
@@ -81,26 +96,23 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .box {
-  /*  width: 700px;
-    float: left;
-    background: rgb(250, 250, 250);*/
-  }
-
-  .box span {
-    float: left;
-    padding: 10px;
-    margin-right: 10px;
-  }
-
-  .box .user {
-    overflow: hidden;
-    margin-top: 10px;
-  }
-
-  .box .user h2 {
-    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    .avatars-img {
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .username {
+      margin-top: 0;
+    }
+    .desc {
+      margin-bottom: 0;
+    }
+    .loading-area {
+      margin: 0 auto;
+    }
   }
 
   [v-cloak] {

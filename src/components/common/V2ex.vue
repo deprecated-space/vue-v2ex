@@ -1,14 +1,14 @@
 <template>
   <div class="box">
     <div class="cell">
-      <strong>V2EX = way to explore</strong>
+      <h5>V2EX = way to explore</h5>
       <div class="sep5"></div>
       <span class="title">V2EX 是一个关于分享和探索的地方</span>
     </div>
     <div class="inner">
       <router-link :to="{name: 'register'}"><input type="button" class="btn btn-default btn-sm" value="现在注册" /></router-link>
       <div class="sep5"></div>
-      <div>已注册用户请<router-link :to="{name: 'login'}">登录</router-link></div>
+      <div>已注册用户请<router-link :to="{name: 'login'}"> 登录</router-link></div>
     </div>
   </div>
 </template>

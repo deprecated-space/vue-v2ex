@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-12">
       <div class="box">
-        <div class="left"><router-link :to="{name: 'index'}">V2EX Clone</router-link></div>
+        <h3 class="left"><router-link :to="{name: 'index'}">V2EX Clone</router-link></h3>
         <div class="right">
           <ul>
             <li v-for="item in tabs">
-              <router-link :class="{curTab: item.key === curTab}" :to="{name: item.key}">{{ item.value }}</router-link>
+              <router-link :class="{active: item.key === curTab}" :to="{name: item.key}">{{ item.value }}</router-link>
             </li>
           </ul>
         </div>
@@ -48,44 +48,42 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .box {
-    height: 40px;
-    line-height: 40px;
-    background-color: #f7f7f7;
-    margin-bottom: 10px;
-  }
-
-  .box .left {
-    float: left;
-    margin-left: 20px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .box .right {
-    float: right;
-    margin-right: 20px;
-  }
-
-  .box ul {
-    list-style-type: none;
-  }
-
-  .box ul > li {
-    display: inline;
-    margin: 0 5px;
-  }
-
-  .box ul > li > a {
-    padding: 3px 5px;
-    text-decoration: none;
-    color: #444;
-  }
-
-  .box ul > li > a.curTab {
-    color: white;
-    background-color: #555;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    .left {
+      font-weight: 900;
+      margin: 0;
+      a {
+        text-decoration: none;
+        &:focus {color: #337ab7}
+      }
+    }
+    .right {
+      ul {
+        display: flex;
+        list-style-type: none;
+        margin-bottom: 0;
+        > li {
+          margin: 0 5px;
+          > a {
+            padding: 3px 5px;
+            text-decoration: none;
+            color: #666;
+            &:hover {
+              color: #333;
+            }
+            &.active {
+              color: #fff;
+              background-color: #555;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
   }
 </style>
