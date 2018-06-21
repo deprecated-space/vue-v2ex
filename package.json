@@ -1,8 +1,8 @@
 {
-  "name": "webpack-simple",
-  "description": "A Vue.js project",
+  "name": "v2ex-clone",
+  "description": "v2ex SPA using Vue.js",
   "version": "1.0.0",
-  "author": "",
+  "author": "zichi",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
